@@ -20,8 +20,8 @@ export class UserController {
   }
 
   @Put(":id")
-  updateUser(@Param("id") id : string): string{
-    return `Updating user ${id}`;
+  updateUser(@Body() userDto : UserDto): string{
+    return `Updating user ${userDto.id}`;
   }
 
   @Get("github/:username")

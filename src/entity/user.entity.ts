@@ -1,3 +1,4 @@
+// var { Entity, Column, PrimaryGeneratedColumn } = require("typeorm");
 import { Entity, Column, PrimaryGeneratedColumn} from "typeorm";
 
 @Entity()
