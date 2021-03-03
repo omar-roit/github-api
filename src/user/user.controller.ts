@@ -1,36 +1,36 @@
-import { Controller, Get, Post, Delete , Put
+import { Controller, Get, Post, Delete , Put, Body, Param
 } from '@nestjs/common';
-import { User } from "./interfaces/user.interface";
+import  UserDto  from "./dto/create-user.dto";
 
 @Controller('user')
 export class UserController {
   @Post()
-  createUser(): string{
+  createUser(@Body() user : UserDto) : string{
     return "User created";
   }
 
-  @Delete()
-  deleteUser(): string{
-    return "User deletes";
+  @Delete(":id")
+  deleteUser(@Param("id") id : string): string{
+    return `Deleting user ${id}`;
   }
 
-  @Get()
-  displayUser(): string{
-    return "User";
+  @Get(":id")
+  displayUser(@Param("id") id : string): string{
+    return `Displaying user ${id}`;
   }
 
-  @Put()
-  updateUser(): string{
-    return "Updated";
+  @Put(":id")
+  updateUser(@Param("id") id : string): string{
+    return `Updating user ${id}`;
   }
 
-  @Get("github")
-  getGithub(): string{
+  @Get("github/:username")
+  getGithub(@Param("username") username : string): string{
     return "Github information";
   }
 
-  @Get("cep")
-  getCep(): string{
-    return "Cep information"
+  @Get("cep/:address")
+  getCep(@Param("address") address : string): string{
+    return "Cep information";
   }
 }
