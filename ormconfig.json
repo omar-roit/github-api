@@ -1,9 +1,9 @@
 { 
    "type": "pg", 
    "host": "localhost", 
-   "username": "test", 
-   "password": "test", 
-   "database": "test", 
+   "username": "roitadmin", 
+   "password": "1234", 
+   "database": "githubapi", 
    "synchronize": true, 
    "logging": false, 
    "entities": [ 
