@@ -15,5 +15,5 @@ export class User{
   githubAccount: string;
 
   @Column()
-  address: string;		
+  address: string;    
 }
